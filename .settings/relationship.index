@@ -5,6 +5,10 @@
     "type" : "job"
   },
   "relatedItems" : [ {
+    "id" : "_g2wi0APKEemgn5Nt-uk-yQ",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
     "id" : "DataOperation",
     "version" : "Latest",
     "type" : "routine"
@@ -40,5 +44,9 @@
     "id" : "TalendStringUtil",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_g2wi0APKEemgn5Nt-uk-yQ - uploads",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 } ]

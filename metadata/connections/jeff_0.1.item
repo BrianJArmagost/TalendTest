@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_tLZkQAPKEemgn5Nt-uk-yQ" name="jeff" id="_g2wi0APKEemgn5Nt-uk-yQ" label="jeff" dataPackage="_xwYLUAPKEemgn5Nt-uk-yQ" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://jk-test-psql.cy3qg3yza9wg.us-east-1.rds.amazonaws.com:5432/edfi_jk" dbVersionString="V9_X" Port="5432" Username="edfi" Password="9UCRnv879yI=" ServerName="jk-test-psql.cy3qg3yza9wg.us-east-1.rds.amazonaws.com" DatasourceName="" FileFieldName="" SID="edfi_jk" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="public">
+    <taggedValue xmi:id="_tLayYAPKEemgn5Nt-uk-yQ" tag="Is Conn Need Reload" value="true"/>
+    <taggedValue xmi:id="_tMKZQAPKEemgn5Nt-uk-yQ" tag="package filter" value=""/>
+    <taggedValue xmi:id="_tMskwAPKEemgn5Nt-uk-yQ" tag="Status" value=""/>
+    <taggedValue xmi:id="_tMskwQPKEemgn5Nt-uk-yQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_tMskwgPKEemgn5Nt-uk-yQ" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_tMskwwPKEemgn5Nt-uk-yQ" tag="Description" value=""/>
+    <taggedValue xmi:id="_tMskxAPKEemgn5Nt-uk-yQ" tag="Author" value=""/>
+    <taggedValue xmi:id="_tMskxQPKEemgn5Nt-uk-yQ" tag="otherParameter"/>
+    <taggedValue xmi:id="_tO49IAPKEemgn5Nt-uk-yQ" tag="DB ProductName" value="PostgreSQL"/>
+    <taggedValue xmi:id="_tO49IQPKEemgn5Nt-uk-yQ" tag="DB ProductVersion" value="9.6.6"/>
+    <taggedValue xmi:id="_tO49IgPKEemgn5Nt-uk-yQ" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_tLayYQPKEemgn5Nt-uk-yQ" key="CONN_PARA_KEY_USERNAME" value="edfi"/>
+    <parameters xmi:id="_vjcZsAPKEemgn5Nt-uk-yQ" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_xwYLUAPKEemgn5Nt-uk-yQ" name="edfi_jk" dataManager="_tLZkQAPKEemgn5Nt-uk-yQ">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_xwYLUQPKEemgn5Nt-uk-yQ" name="public">
+      <ownedElement xsi:type="relational:TdTable" xmi:id="_6sZEEAPKEemgn5Nt-uk-yQ" name="uploads" id="_6sYdAAPKEemgn5Nt-uk-yQ" label="uploads" tableType="TABLE">
+        <feature xsi:type="relational:TdColumn" xmi:id="_6sZEEQPKEemgn5Nt-uk-yQ" name="jobid" label="jobid" length="19" sourceType="BIGSERIAL" talendType="id_Long" key="true" nullable="false">
+          <taggedValue xmi:id="_6sZEEgPKEemgn5Nt-uk-yQ" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_6sZEEwPKEemgn5Nt-uk-yQ" body="nextval('uploads_jobid_seq'::regclass)" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_6sZEFAPKEemgn5Nt-uk-yQ" name="BIGSERIAL" numericPrecisionRadix="10" javaDataType="-5"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_6sZEFQPKEemgn5Nt-uk-yQ" name="filename" label="filename" length="2147483647" sourceType="VARCHAR" talendType="id_String">
+          <taggedValue xmi:id="_6sZEFgPKEemgn5Nt-uk-yQ" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_6sZEFwPKEemgn5Nt-uk-yQ" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_6sZEGAPKEemgn5Nt-uk-yQ" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_6sZEGQPKEemgn5Nt-uk-yQ" name="email" label="email" length="2147483647" sourceType="VARCHAR" talendType="id_String">
+          <taggedValue xmi:id="_6sZEGgPKEemgn5Nt-uk-yQ" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_6sZEGwPKEemgn5Nt-uk-yQ" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_6sZEHAPKEemgn5Nt-uk-yQ" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_6sZEHQPKEemgn5Nt-uk-yQ" name="isprocessed" label="isprocessed" length="1" sourceType="BIT" talendType="id_byte[]">
+          <taggedValue xmi:id="_6sZEHgPKEemgn5Nt-uk-yQ" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_6sZEHwPKEemgn5Nt-uk-yQ" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_6sZEIAPKEemgn5Nt-uk-yQ" name="BIT" numericPrecisionRadix="2" javaDataType="-7" nullable="columnNullable"/>
+        </feature>
+      </ownedElement>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>

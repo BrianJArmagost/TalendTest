@@ -11,18 +11,18 @@
   <groupId>org.example.new_test_project.job</groupId>
   <artifactId>HereIsSomething</artifactId>
   <version>0.1.0</version>
-  <name>NEW_TEST_PROJECT HereIsSomething-0.1.0 (0.1,Job Designs)</name>
+  <name>TESTGIT HereIsSomething-0.1.0 (0.1,Job Designs)</name>
   <properties>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <current.int-resources.dir>${basedir}/src/main/resources</current.int-resources.dir>
     <talend.job.version>0.1</talend.job.version>
-    <talend.project.name.lowercase>new_test_project</talend.project.name.lowercase>
-    <talend.job.path>new_test_project/hereissomething_0_1</talend.job.path>
+    <talend.project.name.lowercase>testgit</talend.project.name.lowercase>
+    <talend.job.path>testgit/hereissomething_0_1</talend.job.path>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
-    <talend.project.name>NEW_TEST_PROJECT</talend.project.name>
+    <talend.project.name>TESTGIT</talend.project.name>
     <talend.product.version>7.1.1.20181026_1147</talend.product.version>
     <talend.job.finalName>hereissomething_0_1</talend.job.finalName>
     <talend.pigudf.groupid>org.example.new_test_project.pigudf</talend.pigudf.groupid>
@@ -51,6 +51,11 @@
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.5</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>

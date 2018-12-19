@@ -11,7 +11,7 @@
   <groupId>org.example.new_test_project.code</groupId>
   <artifactId>routines</artifactId>
   <version>7.1.1</version>
-  <name>NEW_TEST_PROJECT Routines</name>
+  <name>TESTGIT Routines</name>
   <properties>
     <talend.codes.package>routines</talend.codes.package>
   </properties>

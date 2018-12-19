@@ -6,14 +6,14 @@
   <artifactId>code.Master</artifactId>
   <version>7.1.1</version>
   <packaging>pom</packaging>
-  <name>NEW_TEST_PROJECT Codes Master</name>
+  <name>TESTGIT Codes Master</name>
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/routines</module>
     <module>jobs/process/hereissomething_0.1</module>
   </modules>
   <properties>
-    <talend.project.name>NEW_TEST_PROJECT</talend.project.name>
+    <talend.project.name>TESTGIT</talend.project.name>
     <encoding>UTF-8</encoding>
     <talend.version>7.1.1</talend.version>
   </properties>
