@@ -285,6 +285,17 @@ public class HereIsSomething implements TalendJob {
 		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tFlowToIterate_1_error(Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tMsgBox_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap)
 			throws TalendException {
@@ -456,13 +467,15 @@ public class HereIsSomething implements TalendJob {
 				row1Struct row1 = new row1Struct();
 
 				/**
-				 * [tMsgBox_1 begin ] start
+				 * [tFlowToIterate_1 begin ] start
 				 */
 
-				ok_Hash.put("tMsgBox_1", false);
-				start_Hash.put("tMsgBox_1", System.currentTimeMillis());
+				int NB_ITERATE_tMsgBox_1 = 0; // for statistics
 
-				currentComponent = "tMsgBox_1";
+				ok_Hash.put("tFlowToIterate_1", false);
+				start_Hash.put("tFlowToIterate_1", System.currentTimeMillis());
+
+				currentComponent = "tFlowToIterate_1";
 
 				if (execStat) {
 					if (resourceMap.get("inIterateVComp") == null) {
@@ -472,10 +485,13 @@ public class HereIsSomething implements TalendJob {
 					}
 				}
 
-				int tos_count_tMsgBox_1 = 0;
+				int tos_count_tFlowToIterate_1 = 0;
+
+				int nb_line_tFlowToIterate_1 = 0;
+				int counter_tFlowToIterate_1 = 0;
 
 				/**
-				 * [tMsgBox_1 begin ] stop
+				 * [tFlowToIterate_1 begin ] stop
 				 */
 
 				/**
@@ -491,7 +507,7 @@ public class HereIsSomething implements TalendJob {
 
 				for (int i_tFixedFlowInput_1 = 0; i_tFixedFlowInput_1 < 1; i_tFixedFlowInput_1++) {
 
-					row1.newColumn = 1;
+					row1.newColumn = "value";
 
 					/**
 					 * [tFixedFlowInput_1 begin ] stop
@@ -520,10 +536,10 @@ public class HereIsSomething implements TalendJob {
 					 */
 
 					/**
-					 * [tMsgBox_1 main ] start
+					 * [tFlowToIterate_1 main ] start
 					 */
 
-					currentComponent = "tMsgBox_1";
+					currentComponent = "tFlowToIterate_1";
 
 					// row1
 					// row1
@@ -532,9 +548,60 @@ public class HereIsSomething implements TalendJob {
 						runStat.updateStatOnConnection("row1" + iterateId, 1, 1);
 					}
 
+					globalMap.put("row1.newColumn", row1.newColumn);
+
+					nb_line_tFlowToIterate_1++;
+					counter_tFlowToIterate_1++;
+					globalMap.put("tFlowToIterate_1_CURRENT_ITERATION",
+							counter_tFlowToIterate_1);
+
+					tos_count_tFlowToIterate_1++;
+
+					/**
+					 * [tFlowToIterate_1 main ] stop
+					 */
+
+					/**
+					 * [tFlowToIterate_1 process_data_begin ] start
+					 */
+
+					currentComponent = "tFlowToIterate_1";
+
+					/**
+					 * [tFlowToIterate_1 process_data_begin ] stop
+					 */
+					NB_ITERATE_tMsgBox_1++;
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate1", 1, "exec"
+								+ NB_ITERATE_tMsgBox_1);
+						// Thread.sleep(1000);
+					}
+
+					/**
+					 * [tMsgBox_1 begin ] start
+					 */
+
+					ok_Hash.put("tMsgBox_1", false);
+					start_Hash.put("tMsgBox_1", System.currentTimeMillis());
+
+					currentComponent = "tMsgBox_1";
+
+					int tos_count_tMsgBox_1 = 0;
+
+					/**
+					 * [tMsgBox_1 begin ] stop
+					 */
+
+					/**
+					 * [tMsgBox_1 main ] start
+					 */
+
+					currentComponent = "tMsgBox_1";
+
 					int messageIcontMsgBox_1 = javax.swing.JOptionPane.INFORMATION_MESSAGE;
 					String titletMsgBox_1 = "Talend Open Studio";
-					String messagetMsgBox_1 = "Hello Everybody!";
+					String messagetMsgBox_1 = "Hello world!";
 					String resulttMsgBox_1 = null;
 
 					javax.swing.JOptionPane.showMessageDialog(null,
@@ -571,6 +638,33 @@ public class HereIsSomething implements TalendJob {
 					 */
 
 					/**
+					 * [tMsgBox_1 end ] start
+					 */
+
+					currentComponent = "tMsgBox_1";
+
+					ok_Hash.put("tMsgBox_1", true);
+					end_Hash.put("tMsgBox_1", System.currentTimeMillis());
+
+					/**
+					 * [tMsgBox_1 end ] stop
+					 */
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate1", 2, "exec"
+								+ NB_ITERATE_tMsgBox_1);
+					}
+
+					/**
+					 * [tFlowToIterate_1 process_data_end ] start
+					 */
+
+					currentComponent = "tFlowToIterate_1";
+
+					/**
+					 * [tFlowToIterate_1 process_data_end ] stop
+					 */
+
+					/**
 					 * [tFixedFlowInput_1 process_data_end ] start
 					 */
 
@@ -597,11 +691,13 @@ public class HereIsSomething implements TalendJob {
 				 */
 
 				/**
-				 * [tMsgBox_1 end ] start
+				 * [tFlowToIterate_1 end ] start
 				 */
 
-				currentComponent = "tMsgBox_1";
+				currentComponent = "tFlowToIterate_1";
 
+				globalMap.put("tFlowToIterate_1_NB_LINE",
+						nb_line_tFlowToIterate_1);
 				if (execStat) {
 					if (resourceMap.get("inIterateVComp") == null
 							|| !((Boolean) resourceMap.get("inIterateVComp"))) {
@@ -609,11 +705,11 @@ public class HereIsSomething implements TalendJob {
 					}
 				}
 
-				ok_Hash.put("tMsgBox_1", true);
-				end_Hash.put("tMsgBox_1", System.currentTimeMillis());
+				ok_Hash.put("tFlowToIterate_1", true);
+				end_Hash.put("tFlowToIterate_1", System.currentTimeMillis());
 
 				/**
-				 * [tMsgBox_1 end ] stop
+				 * [tFlowToIterate_1 end ] stop
 				 */
 
 			}// end the resume
@@ -641,6 +737,16 @@ public class HereIsSomething implements TalendJob {
 
 				/**
 				 * [tFixedFlowInput_1 finally ] stop
+				 */
+
+				/**
+				 * [tFlowToIterate_1 finally ] start
+				 */
+
+				currentComponent = "tFlowToIterate_1";
+
+				/**
+				 * [tFlowToIterate_1 finally ] stop
 				 */
 
 				/**
@@ -1022,6 +1128,6 @@ public class HereIsSomething implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 30063 characters generated by Talend Open Studio for Data Integration on the
- * December 19, 2018 11:30:19 AM CST
+ * 32525 characters generated by Talend Open Studio for Data Integration on the
+ * December 19, 2018 12:45:45 PM CST
  ************************************************************************************************/
